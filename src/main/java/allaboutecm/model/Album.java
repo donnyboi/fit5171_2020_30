@@ -30,6 +30,12 @@ public class Album extends Entity {
 
     private URL albumURL;
 
+    private String genre;
+
+    private String length;
+
+    private String style;
+
     private List<String> tracks;
 
     public Album(int releaseYear, String recordNumber, String albumName) {
@@ -110,6 +116,24 @@ public class Album extends Entity {
         notBlank(albumName);
 
         this.albumName = albumName;
+    }
+
+    public String getGenre() { return genre; }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public String getLength() { return length; }
+
+    public void setLength(String length) {
+        this.length = length;
+    }
+
+    public String getStyle() { return style; }
+
+    public void setStyle(String style) {
+        this.style = style;
     }
 
     @Override

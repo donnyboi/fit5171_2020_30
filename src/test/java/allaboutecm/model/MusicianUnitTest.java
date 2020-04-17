@@ -18,15 +18,18 @@ public class MusicianUnitTest {
     private Album album;
 
     @BeforeEach
-    public void setup() { musician = new Musician("Don Bopearachchi"); }
+    public void setup() {
+        musician = new Musician("Don Bopearachchi");
+        album = new Album(1975, "ECM 1064/65", "The Köln Concert");
+    }
+
+
 
     @Test
     @DisplayName("More than two words")
     public void musicianNameHasMoreThanTwoWord() {
         String word = musician.getName().trim();
-        int count;
-        if (word == null) { count = 0; }
-        count = word.isEmpty() ? 0 : word.split("\\s+").length;
+        int count = word.isEmpty() ? 0 : word.split("\\s+").length;
         assertTrue(count > 1);
     }
 
@@ -54,5 +57,4 @@ public class MusicianUnitTest {
     public void displayTrueForLinksWithoutProtocol() {
         assertThrows(MalformedURLException.class, () -> musician.setMusicianUrl(new URL("www.google.com/")));
     }
-
 }
