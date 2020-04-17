@@ -53,6 +53,13 @@ public class MusicianUnitTest {
     }
 
     @Test
+    @DisplayName("Duplicate object")
+    public void test() {
+        Musician musician1 = new Musician("Don Bopearachchi");
+        assertEquals(musician, musician1);
+    }
+
+    @Test
     @DisplayName("Check if URL has a protocl")
     public void displayTrueForLinksWithoutProtocol() {
         assertThrows(MalformedURLException.class, () -> musician.setMusicianUrl(new URL("www.google.com/")));

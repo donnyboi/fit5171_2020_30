@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AlbumUnitTest {
     private Album album;
@@ -35,5 +34,11 @@ class AlbumUnitTest {
         Album album1 = new Album(1975, "ECM 1064/65", "The Köln Concert");
 
         assertEquals(album, album1);
+    }
+
+    @Test
+    @DisplayName("Check that release year hass a valid 4 digit value")
+    public void releaseYearMustHave4Characters() {
+        assertTrue(String.valueOf(album.getReleaseYear()).length()==4);
     }
 }
