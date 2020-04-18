@@ -93,6 +93,14 @@ class AlbumUnitTest {
         assertEquals(musicianInstruments, album.getInstruments());
     }
 
+    @Test
+    @DisplayName("Test Release getters and setters")
+    public void testReleaseYearGetterandSetter() {
+        int releaseYear = 2009;
+        album.setReleaseYear(releaseYear);
+        assertEquals(releaseYear,album.getReleaseYear());
+    }
+
 
     @AfterEach
     void tearDown() {

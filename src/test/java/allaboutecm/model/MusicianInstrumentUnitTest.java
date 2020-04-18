@@ -22,6 +22,22 @@ class MusicianInstrumentUnitTest {
         assertEquals(musicianInstrument1,musicianInstrument);
     }
 
+    @Test
+    public void testMusiciansGettersandSetters() {
+        Musician musician = new Musician("A@AP Rocky");
+        musicianInstrument.setMusician(musician);
+        assertEquals(musician, musicianInstrument.getMusician());
+    }
+
+    @Test
+    public void testMusicalInstrumental() {
+        MusicalInstrument musicalInstrument = new MusicalInstrument("Guitar");
+        musicianInstrument.setMusicalInstrument(musicalInstrument);
+        assertEquals(musicalInstrument, musicianInstrument.getMusicalInstrument());
+    }
+
+
+
     @AfterEach
     void tearDown() {
         System.out.println("MusicianInstrument: teardown");
