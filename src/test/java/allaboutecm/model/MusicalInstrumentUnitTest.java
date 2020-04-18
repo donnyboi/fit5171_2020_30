@@ -12,6 +12,7 @@ class MusicalInstrumentUnitTest {
 
     @BeforeEach
     void setUp() {
+        musicalInstrument = new MusicalInstrument("Guitar");
     }
 
     @Test
@@ -20,7 +21,25 @@ class MusicalInstrumentUnitTest {
         assertThrows(NullPointerException.class, () -> musicalInstrument.setName(null));
     }
 
+    @Test
+    @DisplayName("Duplicate object")
+    public void testDupicateObject() {
+        MusicalInstrument musicalInstrument1 = new MusicalInstrument("Guitar");
+        assertEquals(musicalInstrument, musicalInstrument1);
+    }
+
+    @Test
+    @DisplayName("Test Getter and Setter of Instrument")
+    public void testInstrumentGetterandSetter() {
+        String testString = "Piano";
+        musicalInstrument.setName(testString);
+        assertEquals(testString, musicalInstrument.getName());
+    }
+
     @AfterEach
     void tearDown() {
+        System.out.println("Running: tearDown");
+        musicalInstrument = null;
+        assertNull(musicalInstrument);
     }
 }
